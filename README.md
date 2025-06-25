@@ -35,6 +35,7 @@
 <p align="center">
   <img src="https://streak-stats.demolab.com?user=OmmPrakash-07&theme=radical" alt="GitHub Streak" />
 </p>
+
 ![OmmPrakash-07's GitHub Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=OmmPrakash-07&theme=github-compact)
 
 ---
