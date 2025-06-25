@@ -1,39 +1,27 @@
 <h1 align="center">👋 Hi there, I'm Omm Prakash Parida</h1>
 
-👋 Hey there! I’m a student and developer with a passion for building, exploring, and growing through code.
-
-💻 I break things (and then fix them) using:
-
-🔧 Python | HTML/CSS
-
-🌐 React | Node.js | Express.js
-
-🗄️ MySQL | MongoDB
-
-
-🧠 Currently learning: JavaScript & system design
-🚀 I focus on rapid development, iterative learning, and meaningful open-source contributions.
-🎯 Passionate about clean code, dev tools, and turning coffee into software.
-
-🍵 Outside of tech, I’m a tea lover, an avid biker, and a traveler at heart — I spent my college days chasing new roads and new experiences, mostly by train.
-
-📫 Reach me on LinkedIn or slide into my issues
+॥ अंतः अस्ति प्रारंभः ॥ अंत से ही एक नई शुरुआत होती ! The end is the beginning.
 
 ---
 
 ## 🧑‍💻 About Me
 
-- 🎓 Student passionate about full-stack development  
-- 💡 Currently building projects using the **MERN Stack**  
-- 🍵 Tea lover, 🏍️ avid biker, and 🌍 traveler at heart  
-- 🚂 Love discovering new roads—mostly by train during college days
+My name is Omm Prakash Parida, and I’m from Cuttack, Odisha, India. I have completed my diploma from Nilachal Polytechnic and am currently pursuing my B.Tech at Gandhi Engineering College (GEC Autonomous), Bhubaneswar.
+
+I come from a nuclear family. My hobbies include playing games and listening to music.
+I am a hardworking, self-motivated individual with strong communication skills. I am also a quick learner, always eager to grow and take on new challenges.
+
+My short-term goal is to secure a job in a reputed company where I can apply my knowledge and gain practical experience.
+My long-term goal is to attain a respected position in the industry, where I can contribute to the organization's success and continue to build a strong career.
+
+That’s all about me. Thank you!
 
 ---
 
 ## 💼 Tech Stack
 
-![HTML](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
-![CSS](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
+![HTML](https://img.shields.io/badge/HTML-E34F26?style=flat-square&logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS-1572B6?style=flat-square&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white)
