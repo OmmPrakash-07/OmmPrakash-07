@@ -32,7 +32,7 @@
 
 ![OmmPrakash-07 GitHub Stats](https://github-readme-stats.vercel.app/api?username=OmmPrakash-07&show_icons=true&theme=radical)
 ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=OmmPrakash-07&layout=compact&theme=radical)
-![GitHub Streak](https://github-readme-streak-stats.herokuapp.com?user=OmmPrakash-07&theme=radical&date_format=M%20j%5B%2C%20Y%5D)
+![GitHub Streak](https://streak-stats.demolab.com?user=OmmPrakash-07&theme=radical)
 ![OmmPrakash-07's GitHub Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=OmmPrakash-07&theme=github-compact)
 
 ---
