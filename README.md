@@ -27,12 +27,12 @@
 
 ## 📊 GitHub Analytics
 
-![OmmPrakash_07 GitHub Stats](https://github-readme-stats.vercel.app/api?username=OmmPrakash_07&show_icons=true&theme=radical)
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=OmmPrakash_07&layout=compact&theme=radical)
+![OmmPrakash-07 GitHub Stats](https://github-readme-stats.vercel.app/api?username=OmmPrakash-07&show_icons=true&theme=radical)
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=OmmPrakash-07&layout=compact&theme=radical)
 
-![GitHub Streak](https://github-readme-streak-stats.herokuapp.com?user=OmmPrakash_07&theme=radical&date_format=M%20j%5B%2C%20Y%5D)
+![GitHub Streak](https://github-readme-streak-stats.herokuapp.com?user=OmmPrakash-07&theme=radical&date_format=M%20j%5B%2C%20Y%5D)
 
-![OmmPrakash_07's Contribution Graph](https://github-readme-activity-graph.cyclic.app/graph?username=OmmPrakash_07&theme=github-compact)
+![OmmPrakash-07's Contribution Graph](https://github-readme-activity-graph.cyclic.app/graph?username=OmmPrakash-07&theme=github-compact)
 
 ---
 
