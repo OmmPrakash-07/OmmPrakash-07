@@ -1,7 +1,23 @@
 <h1 align="center">👋 Hi there, I'm Omm Prakash Parida</h1>
 
-🚀 Code enthusiast | 💻 Turning ideas into reality with clean, efficient code  
-🌱 Open-source lover | Always learning, always building  
+👋 Hey there! I’m a student and developer with a passion for building, exploring, and growing through code.
+
+💻 I break things (and then fix them) using:
+
+🔧 Python | HTML/CSS
+
+🌐 React | Node.js | Express.js
+
+🗄️ MySQL | MongoDB
+
+
+🧠 Currently learning: JavaScript & system design
+🚀 I focus on rapid development, iterative learning, and meaningful open-source contributions.
+🎯 Passionate about clean code, dev tools, and turning coffee into software.
+
+🍵 Outside of tech, I’m a tea lover, an avid biker, and a traveler at heart — I spent my college days chasing new roads and new experiences, mostly by train.
+
+📫 Reach me on LinkedIn or slide into my issues
 
 ---
 
