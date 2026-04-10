@@ -4,7 +4,7 @@
 
 ---
 
-## 🧑‍💻 About Me
+## 🧑‍💻 About Mee
 
 My name is Omm Prakash Parida, and I’m from Cuttack, Odisha, India. I have completed my diploma from Nilachal Polytechnic and am currently pursuing my B.Tech at Gandhi Engineering College (GEC Autonomous), Bhubaneswar.
 
