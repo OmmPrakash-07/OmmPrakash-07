@@ -69,8 +69,8 @@ That’s all about me. Thank you!
 
 ## 📊 GitHub Analytics
 
-![OmmPrakash-07 GitHub Stats](https://github-readme-stats.vercel.app/api?username=OmmPrakash-07&show_icons=true&theme=radical)
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=OmmPrakash-07&layout=compact&theme=radical)
+<!-- ![OmmPrakash-07 GitHub Stats](https://github-readme-stats.vercel.app/api?username=OmmPrakash-07&show_icons=true&theme=radical)
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=OmmPrakash-07&layout=compact&theme=radical) -->
 <p align="center">
   <img src="https://streak-stats.demolab.com?user=OmmPrakash-07&theme=radical" alt="GitHub Streak" />
 </p>
