@@ -15,18 +15,17 @@ README_FILE = Path("README.md")
 START_MARKER = "<!-- AUTO_PROJECTS_START -->"
 END_MARKER = "<!-- AUTO_PROJECTS_END -->"
 
-
-# ---------------------------------------------------------
-# GitHub API
-# ---------------------------------------------------------
-
 API_BASE = "https://api.github.com"
 
+
+# =========================================================
+# GitHub API
+# =========================================================
 
 def github_request(url):
     headers = {
         "Accept": "application/vnd.github+json",
-        "X-GitHub-Api-Version": "2026-03-10",
+        "X-GitHub-Api-Version": "2022-11-28",
         "User-Agent": "github-readme-project-detector",
     }
 
@@ -52,7 +51,6 @@ def github_request(url):
 
 def get_repositories():
     repositories = []
-
     page = 1
 
     while True:
@@ -80,10 +78,6 @@ def get_repositories():
     return repositories
 
 
-# ---------------------------------------------------------
-# Repository information
-# ---------------------------------------------------------
-
 def get_languages(repo_name):
     url = f"{API_BASE}/repos/{USERNAME}/{repo_name}/languages"
 
@@ -92,13 +86,12 @@ def get_languages(repo_name):
     if not data:
         return []
 
-    # Sort by amount of code
     return [
         language
         for language, _ in sorted(
             data.items(),
             key=lambda item: item[1],
-            reverse=True
+            reverse=True,
         )
     ]
 
@@ -132,30 +125,38 @@ def get_raw_file(repo_name, path):
             url,
             headers={
                 "User-Agent": "github-readme-project-detector"
-            }
+            },
         )
 
         with urllib.request.urlopen(request, timeout=20) as response:
-            return response.read().decode("utf-8", errors="ignore")
+            return response.read().decode(
+                "utf-8",
+                errors="ignore",
+            )
 
     except Exception:
         return ""
 
 
-# ---------------------------------------------------------
-# Dependency detection
-# ---------------------------------------------------------
+# =========================================================
+# Technology Detection
+# =========================================================
 
 FRAMEWORK_RULES = OrderedDict({
 
-    # JavaScript / TypeScript
+    # -------------------------
+    # Frontend
+    # -------------------------
+
     "React": [
-        "react",
+        '"react"',
+        "'react'",
         "react-dom",
     ],
 
     "Next.js": [
-        "next",
+        '"next"',
+        "'next'",
     ],
 
     "Angular": [
@@ -163,15 +164,18 @@ FRAMEWORK_RULES = OrderedDict({
     ],
 
     "Vue.js": [
-        "vue",
+        '"vue"',
+        "'vue'",
     ],
 
     "Vite": [
-        "vite",
+        '"vite"',
+        "'vite'",
     ],
 
     "Express.js": [
-        "express",
+        '"express"',
+        "'express'",
     ],
 
     "NestJS": [
@@ -197,7 +201,10 @@ FRAMEWORK_RULES = OrderedDict({
         "axios",
     ],
 
+    # -------------------------
     # Python
+    # -------------------------
+
     "FastAPI": [
         "fastapi",
     ],
@@ -209,6 +216,10 @@ FRAMEWORK_RULES = OrderedDict({
     "Flask": [
         "flask",
     ],
+
+    # -------------------------
+    # AI / ML
+    # -------------------------
 
     "LangChain": [
         "langchain",
@@ -242,7 +253,10 @@ FRAMEWORK_RULES = OrderedDict({
         "pandas",
     ],
 
+    # -------------------------
     # Java
+    # -------------------------
+
     "Spring Boot": [
         "spring-boot",
         "org.springframework.boot",
@@ -256,7 +270,10 @@ FRAMEWORK_RULES = OrderedDict({
         "spring-data-jpa",
     ],
 
+    # -------------------------
     # .NET
+    # -------------------------
+
     ".NET": [
         "Microsoft.NET.Sdk",
         "Microsoft.AspNetCore",
@@ -271,7 +288,10 @@ FRAMEWORK_RULES = OrderedDict({
         "Microsoft.EntityFrameworkCore",
     ],
 
+    # -------------------------
     # Databases
+    # -------------------------
+
     "MongoDB": [
         "mongodb",
         "mongoose",
@@ -295,22 +315,390 @@ FRAMEWORK_RULES = OrderedDict({
         "redis",
     ],
 
-    # Cloud / infrastructure
-    "AWS SDK": [
+    # -------------------------
+    # Cloud
+    # -------------------------
+
+    "AWS": [
         "@aws-sdk",
         "aws-sdk",
         "boto3",
     ],
-
-    "Docker": [
-        "docker",
-    ],
 })
 
 
-# ---------------------------------------------------------
-# Dependency files
-# ---------------------------------------------------------
+# =========================================================
+# Technology badge configuration
+# =========================================================
+
+BADGES = {
+
+    # Languages
+    "JavaScript": (
+        "JavaScript",
+        "F7DF1E",
+        "javascript",
+        "000000",
+    ),
+
+    "TypeScript": (
+        "TypeScript",
+        "3178C6",
+        "typescript",
+        "ffffff",
+    ),
+
+    "Python": (
+        "Python",
+        "3776AB",
+        "python",
+        "ffffff",
+    ),
+
+    "Java": (
+        "Java",
+        "ED8B00",
+        "openjdk",
+        "ffffff",
+    ),
+
+    "C": (
+        "C",
+        "A8B9CC",
+        "c",
+        "000000",
+    ),
+
+    "C++": (
+        "C%2B%2B",
+        "00599C",
+        "cplusplus",
+        "ffffff",
+    ),
+
+    "C#": (
+        "C%23",
+        "512BD4",
+        "csharp",
+        "ffffff",
+    ),
+
+    "HTML": (
+        "HTML5",
+        "E34F26",
+        "html5",
+        "ffffff",
+    ),
+
+    "CSS": (
+        "CSS3",
+        "1572B6",
+        "css3",
+        "ffffff",
+    ),
+
+    "SQL": (
+        "SQL",
+        "4479A1",
+        "mysql",
+        "ffffff",
+    ),
+
+    # Frontend
+    "React": (
+        "React",
+        "61DAFB",
+        "react",
+        "000000",
+    ),
+
+    "Next.js": (
+        "Next.js",
+        "000000",
+        "nextdotjs",
+        "ffffff",
+    ),
+
+    "Angular": (
+        "Angular",
+        "DD0031",
+        "angular",
+        "ffffff",
+    ),
+
+    "Vue.js": (
+        "Vue.js",
+        "4FC08D",
+        "vuedotjs",
+        "ffffff",
+    ),
+
+    "Vite": (
+        "Vite",
+        "646CFF",
+        "vite",
+        "ffffff",
+    ),
+
+    "Tailwind CSS": (
+        "Tailwind CSS",
+        "06B6D4",
+        "tailwindcss",
+        "ffffff",
+    ),
+
+    "Redux": (
+        "Redux",
+        "764ABC",
+        "redux",
+        "ffffff",
+    ),
+
+    "React Router": (
+        "React Router",
+        "CA4245",
+        "reactrouter",
+        "ffffff",
+    ),
+
+    # Backend
+    "Node.js": (
+        "Node.js",
+        "339933",
+        "nodedotjs",
+        "ffffff",
+    ),
+
+    "Express.js": (
+        "Express.js",
+        "000000",
+        "express",
+        "ffffff",
+    ),
+
+    "NestJS": (
+        "NestJS",
+        "E0234E",
+        "nestjs",
+        "ffffff",
+    ),
+
+    "FastAPI": (
+        "FastAPI",
+        "009688",
+        "fastapi",
+        "ffffff",
+    ),
+
+    "Django": (
+        "Django",
+        "092E20",
+        "django",
+        "ffffff",
+    ),
+
+    "Flask": (
+        "Flask",
+        "000000",
+        "flask",
+        "ffffff",
+    ),
+
+    "Spring Boot": (
+        "Spring Boot",
+        "6DB33F",
+        "springboot",
+        "ffffff",
+    ),
+
+    "Spring Security": (
+        "Spring Security",
+        "6DB33F",
+        "springsecurity",
+        "ffffff",
+    ),
+
+    "Spring Data JPA": (
+        "Spring Data JPA",
+        "6DB33F",
+        "spring",
+        "ffffff",
+    ),
+
+    ".NET": (
+        ".NET",
+        "512BD4",
+        "dotnet",
+        "ffffff",
+    ),
+
+    "ASP.NET Core": (
+        "ASP.NET Core",
+        "512BD4",
+        "dotnet",
+        "ffffff",
+    ),
+
+    "Entity Framework Core": (
+        "Entity Framework Core",
+        "512BD4",
+        "dotnet",
+        "ffffff",
+    ),
+
+    # AI
+    "LangChain": (
+        "LangChain",
+        "1C3C3C",
+        "langchain",
+        "ffffff",
+    ),
+
+    "LangGraph": (
+        "LangGraph",
+        "1C3C3C",
+        "langgraph",
+        "ffffff",
+    ),
+
+    "OpenAI": (
+        "OpenAI",
+        "412991",
+        "openai",
+        "ffffff",
+    ),
+
+    "TensorFlow": (
+        "TensorFlow",
+        "FF6F00",
+        "tensorflow",
+        "ffffff",
+    ),
+
+    "PyTorch": (
+        "PyTorch",
+        "EE4C2C",
+        "pytorch",
+        "ffffff",
+    ),
+
+    "NumPy": (
+        "NumPy",
+        "013243",
+        "numpy",
+        "ffffff",
+    ),
+
+    "Pandas": (
+        "Pandas",
+        "150458",
+        "pandas",
+        "ffffff",
+    ),
+
+    # Database
+    "MongoDB": (
+        "MongoDB",
+        "47A248",
+        "mongodb",
+        "ffffff",
+    ),
+
+    "PostgreSQL": (
+        "PostgreSQL",
+        "4169E1",
+        "postgresql",
+        "ffffff",
+    ),
+
+    "MySQL": (
+        "MySQL",
+        "4479A1",
+        "mysql",
+        "ffffff",
+    ),
+
+    "Redis": (
+        "Redis",
+        "DC382D",
+        "redis",
+        "ffffff",
+    ),
+
+    # Cloud
+    "AWS": (
+        "AWS",
+        "232F3E",
+        "amazonaws",
+        "ffffff",
+    ),
+
+    "AWS SDK": (
+        "AWS SDK",
+        "232F3E",
+        "amazonaws",
+        "ffffff",
+    ),
+
+    # Tools
+    "Docker": (
+        "Docker",
+        "2496ED",
+        "docker",
+        "ffffff",
+    ),
+
+    "Maven": (
+        "Maven",
+        "C71A36",
+        "apachemaven",
+        "ffffff",
+    ),
+
+    "npm": (
+        "npm",
+        "CB3837",
+        "npm",
+        "ffffff",
+    ),
+}
+
+
+# =========================================================
+# Badge generator
+# =========================================================
+
+def badge(name):
+
+    if name not in BADGES:
+        return f"`{name}`"
+
+    label, background, logo, logo_color = BADGES[name]
+
+    return (
+        f"![{name}]"
+        f"(https://img.shields.io/badge/"
+        f"{label}-{background}"
+        f"?style=flat-square"
+        f"&logo={logo}"
+        f"&logoColor={logo_color})"
+    )
+
+
+def badges(items):
+
+    if not items:
+        return ""
+
+    return " ".join(
+        badge(item)
+        for item in items
+    )
+
+
+# =========================================================
+# Dependency detection
+# =========================================================
 
 DEPENDENCY_FILES = {
     "package.json",
@@ -329,9 +717,11 @@ DEPENDENCY_FILES = {
 
 
 def find_dependency_files(tree):
+
     found = []
 
     for path in tree:
+
         filename = path.split("/")[-1]
 
         if filename in DEPENDENCY_FILES:
@@ -344,10 +734,15 @@ def find_dependency_files(tree):
 
 
 def dependency_text(repo_name, dependency_files):
+
     combined = ""
 
     for path in dependency_files:
-        content = get_raw_file(repo_name, path)
+
+        content = get_raw_file(
+            repo_name,
+            path,
+        )
 
         if content:
             combined += "\n" + content.lower()
@@ -356,6 +751,7 @@ def dependency_text(repo_name, dependency_files):
 
 
 def detect_frameworks(text):
+
     detected = []
 
     for framework, packages in FRAMEWORK_RULES.items():
@@ -369,11 +765,12 @@ def detect_frameworks(text):
     return detected
 
 
-# ---------------------------------------------------------
-# Extra project detection
-# ---------------------------------------------------------
+# =========================================================
+# Tools
+# =========================================================
 
 def detect_tools(tree, text):
+
     tools = []
 
     filenames = {
@@ -381,9 +778,13 @@ def detect_tools(tree, text):
         for path in tree
     }
 
-    if "dockerfile" in filenames or any(
-        "docker-compose" in name or "compose.yaml" in name
-        for name in filenames
+    if (
+        "dockerfile" in filenames
+        or any(
+            "docker-compose" in name
+            or "compose.yaml" in name
+            for name in filenames
+        )
     ):
         tools.append("Docker")
 
@@ -393,21 +794,12 @@ def detect_tools(tree, text):
     if "package.json" in filenames:
         tools.append("npm")
 
-    if "requirements.txt" in filenames or "pyproject.toml" in filenames:
-        tools.append("Python Package Manager")
-
-    if "terraform" in text or any(
-        path.endswith(".tf")
-        for path in tree
-    ):
-        tools.append("Terraform")
-
     return tools
 
 
-# ---------------------------------------------------------
+# =========================================================
 # Categories
-# ---------------------------------------------------------
+# =========================================================
 
 DATABASE_TECHNOLOGIES = {
     "MongoDB",
@@ -417,6 +809,7 @@ DATABASE_TECHNOLOGIES = {
 }
 
 CLOUD_TECHNOLOGIES = {
+    "AWS",
     "AWS SDK",
 }
 
@@ -426,6 +819,8 @@ AI_TECHNOLOGIES = {
     "OpenAI",
     "TensorFlow",
     "PyTorch",
+    "NumPy",
+    "Pandas",
 }
 
 FRONTEND_TECHNOLOGIES = {
@@ -454,25 +849,8 @@ BACKEND_TECHNOLOGIES = {
 }
 
 
-# ---------------------------------------------------------
-# Markdown helpers
-# ---------------------------------------------------------
+def categorize(frameworks):
 
-def code_badges(items):
-    if not items:
-        return "—"
-
-    return " ".join(
-        f"`{item}`"
-        for item in items
-    )
-
-
-def project_language_line(languages):
-    return code_badges(languages[:8])
-
-
-def categorized_frameworks(frameworks):
     result = {
         "Frontend": [],
         "Backend": [],
@@ -482,201 +860,239 @@ def categorized_frameworks(frameworks):
         "Other": [],
     }
 
-    for framework in frameworks:
+    for item in frameworks:
 
-        if framework in FRONTEND_TECHNOLOGIES:
-            result["Frontend"].append(framework)
+        if item in FRONTEND_TECHNOLOGIES:
+            result["Frontend"].append(item)
 
-        elif framework in BACKEND_TECHNOLOGIES:
-            result["Backend"].append(framework)
+        elif item in BACKEND_TECHNOLOGIES:
+            result["Backend"].append(item)
 
-        elif framework in AI_TECHNOLOGIES:
-            result["AI / ML"].append(framework)
+        elif item in AI_TECHNOLOGIES:
+            result["AI / ML"].append(item)
 
-        elif framework in DATABASE_TECHNOLOGIES:
-            result["Database"].append(framework)
+        elif item in DATABASE_TECHNOLOGIES:
+            result["Database"].append(item)
 
-        elif framework in CLOUD_TECHNOLOGIES:
-            result["Cloud"].append(framework)
+        elif item in CLOUD_TECHNOLOGIES:
+            result["Cloud"].append(item)
 
         else:
-            result["Other"].append(framework)
+            result["Other"].append(item)
 
     return result
 
 
-# ---------------------------------------------------------
+# =========================================================
+# Project scanning
+# =========================================================
+
+def scan_project(repo):
+
+    repo_name = repo["name"]
+
+    print(f"Scanning: {repo_name}")
+
+    languages = get_languages(repo_name)
+
+    tree = get_repository_tree(repo_name)
+
+    dependency_files = find_dependency_files(tree)
+
+    dependency_content = dependency_text(
+        repo_name,
+        dependency_files,
+    )
+
+    frameworks = detect_frameworks(
+        dependency_content
+    )
+
+    tools = detect_tools(
+        tree,
+        dependency_content,
+    )
+
+    categories = categorize(
+        frameworks
+    )
+
+    return {
+        "name": repo_name,
+        "url": repo["html_url"],
+        "description": repo.get("description") or "",
+        "languages": languages,
+        "categories": categories,
+        "tools": tools,
+        "updated": repo.get("updated_at", ""),
+    }
+
+
+# =========================================================
 # README generation
-# ---------------------------------------------------------
+# =========================================================
 
-def build_project_section(repositories):
+def build_section(projects):
 
-    rows = []
+    output = [
+        START_MARKER,
+        "",
+        "## 🚀 Projects & Technologies",
+        "",
+        "> Automatically generated from my public GitHub repositories.",
+        "",
+    ]
 
-    for repo in repositories:
+    for project in projects:
 
-        repo_name = repo["name"]
-
-        # Don't show the profile repository itself
-        if repo_name.lower() == PROFILE_REPO.lower():
-            continue
-
-        # Don't include forks
-        if repo.get("fork"):
-            continue
-
-        # Skip archived repositories
-        if repo.get("archived"):
-            continue
-
-        print(f"Scanning: {repo_name}")
-
-        languages = get_languages(repo_name)
-
-        tree = get_repository_tree(repo_name)
-
-        dependency_files = find_dependency_files(tree)
-
-        dependency_content = dependency_text(
-            repo_name,
-            dependency_files
-        )
-
-        frameworks = detect_frameworks(
-            dependency_content
-        )
-
-        tools = detect_tools(
-            tree,
-            dependency_content
-        )
-
-        categories = categorized_frameworks(
-            frameworks
-        )
-
-        rows.append({
-            "name": repo_name,
-            "description": repo.get("description") or "",
-            "url": repo.get("html_url"),
-            "languages": languages,
-            "frameworks": frameworks,
-            "categories": categories,
-            "tools": tools,
-            "updated": repo.get("updated_at", ""),
-        })
-
-    if not rows:
-        return (
-            f"{START_MARKER}\n"
-            "## 🚀 Projects & Technologies\n\n"
-            "_No public repositories detected yet._\n\n"
-            f"{END_MARKER}"
-        )
-
-    # Most recently updated projects first
-    rows.sort(
-        key=lambda item: item["updated"],
-        reverse=True
-    )
-
-    markdown = []
-
-    markdown.append(START_MARKER)
-    markdown.append("")
-    markdown.append("## 🚀 Projects & Technologies")
-    markdown.append("")
-    markdown.append(
-        "> Automatically generated from my public GitHub repositories. "
-        "Languages are read from GitHub repository statistics, while "
-        "frameworks and libraries are detected from project dependencies."
-    )
-    markdown.append("")
-
-    for project in rows:
-
-        markdown.append(
-            f"### [{project['name']}]({project['url']})"
+        output.append(
+            f"### 📂 [{project['name']}]"
+            f"({project['url']})"
         )
 
         if project["description"]:
-            markdown.append(
-                f"{project['description']}"
+            output.append("")
+            output.append(
+                project["description"]
             )
 
-        markdown.append("")
+        output.append("")
 
         if project["languages"]:
-            markdown.append(
-                f"**Languages:** "
-                f"{project_language_line(project['languages'])}"
+
+            output.append(
+                "**💻 Languages**"
             )
+
+            output.append(
+                badges(
+                    project["languages"][:8]
+                )
+            )
+
+            output.append("")
 
         categories = project["categories"]
 
         if categories["Frontend"]:
-            markdown.append(
-                f"**Frontend:** "
-                f"{code_badges(categories['Frontend'])}"
+
+            output.append(
+                "**🎨 Frontend**"
             )
+
+            output.append(
+                badges(
+                    categories["Frontend"]
+                )
+            )
+
+            output.append("")
 
         if categories["Backend"]:
-            markdown.append(
-                f"**Backend:** "
-                f"{code_badges(categories['Backend'])}"
+
+            output.append(
+                "**⚙️ Backend**"
             )
+
+            output.append(
+                badges(
+                    categories["Backend"]
+                )
+            )
+
+            output.append("")
 
         if categories["AI / ML"]:
-            markdown.append(
-                f"**AI / ML:** "
-                f"{code_badges(categories['AI / ML'])}"
+
+            output.append(
+                "**🤖 AI / ML**"
             )
+
+            output.append(
+                badges(
+                    categories["AI / ML"]
+                )
+            )
+
+            output.append("")
 
         if categories["Database"]:
-            markdown.append(
-                f"**Database:** "
-                f"{code_badges(categories['Database'])}"
+
+            output.append(
+                "**🗄️ Database**"
             )
+
+            output.append(
+                badges(
+                    categories["Database"]
+                )
+            )
+
+            output.append("")
 
         if categories["Cloud"]:
-            markdown.append(
-                f"**Cloud:** "
-                f"{code_badges(categories['Cloud'])}"
+
+            output.append(
+                "**☁️ Cloud**"
             )
+
+            output.append(
+                badges(
+                    categories["Cloud"]
+                )
+            )
+
+            output.append("")
 
         if categories["Other"]:
-            markdown.append(
-                f"**Libraries / Frameworks:** "
-                f"{code_badges(categories['Other'])}"
+
+            output.append(
+                "**🧩 Libraries / Frameworks**"
             )
+
+            output.append(
+                badges(
+                    categories["Other"]
+                )
+
+            output.append("")
 
         if project["tools"]:
-            markdown.append(
-                f"**Tools:** "
-                f"{code_badges(project['tools'])}"
+
+            output.append(
+                "**🛠️ Tools**"
             )
 
-        markdown.append("")
-        markdown.append("---")
-        markdown.append("")
+            output.append(
+                badges(
+                    project["tools"]
+                )
+            )
 
-    # Remove final separator
-    if markdown[-2] == "---":
-        markdown = markdown[:-2]
+            output.append("")
 
-    markdown.append("")
-    markdown.append(END_MARKER)
+        output.append("---")
+        output.append("")
 
-    return "\n".join(markdown)
+    if output[-2] == "---":
+        output = output[:-2]
+
+    output.extend([
+        "",
+        END_MARKER,
+    ])
+
+    return "\n".join(output)
 
 
-# ---------------------------------------------------------
-# README replacement
-# ---------------------------------------------------------
+# =========================================================
+# README update
+# =========================================================
 
-def update_readme(new_section):
+def update_readme(section):
 
     if not README_FILE.exists():
+
         raise FileNotFoundError(
             "README.md was not found."
         )
@@ -689,61 +1105,77 @@ def update_readme(new_section):
         re.escape(START_MARKER)
         + r".*?"
         + re.escape(END_MARKER),
-        re.DOTALL
+        re.DOTALL,
     )
 
     if pattern.search(content):
 
         updated = pattern.sub(
-            new_section,
+            section,
             content,
-            count=1
+            count=1,
         )
 
     else:
 
-        # If markers don't exist, add the generated section
-        # at the end of the README.
         updated = (
             content.rstrip()
             + "\n\n---\n\n"
-            + new_section
+            + section
             + "\n"
         )
 
     README_FILE.write_text(
         updated,
-        encoding="utf-8"
+        encoding="utf-8",
     )
 
 
-# ---------------------------------------------------------
+# =========================================================
 # Main
-# ---------------------------------------------------------
+# =========================================================
 
 def main():
 
     print("=" * 60)
-    print("GitHub README Project Detector")
+    print("GitHub Projects & Technology Detector")
     print("=" * 60)
-
-    print(f"GitHub user: {USERNAME}")
 
     repositories = get_repositories()
 
-    print(
-        f"Found {len(repositories)} repositories."
+    projects = []
+
+    for repo in repositories:
+
+        if repo["name"].lower() == PROFILE_REPO.lower():
+            continue
+
+        if repo.get("fork"):
+            continue
+
+        if repo.get("archived"):
+            continue
+
+        projects.append(
+            scan_project(repo)
+        )
+
+    projects.sort(
+        key=lambda item: item["updated"],
+        reverse=True,
     )
 
-    section = build_project_section(
-        repositories
+    print(
+        f"Generating README for {len(projects)} projects..."
+    )
+
+    section = build_section(
+        projects
     )
 
     update_readme(section)
 
-    print("")
-    print("README successfully updated.")
-    print("=" * 60)
+    print("README updated successfully.")
 
 
 if __name__ == "__main__":
