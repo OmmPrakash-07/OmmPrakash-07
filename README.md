@@ -66,6 +66,17 @@ That’s all about me. Thank you!
 
 ---
 
+## 📂 Projects & Languages
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=OmmPrakash-07&layout=compact&langs_count=12&theme=radical" />
+</p>
+
+<p align="center">
+  <i>Languages automatically detected from my GitHub repositories.</i>
+</p>
+
+---
 
 ## 📊 GitHub Analytics
 
