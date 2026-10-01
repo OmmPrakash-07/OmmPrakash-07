@@ -101,3 +101,154 @@ That’s all about me. Thank you!
 ---
 
 > *“Code is like humor. When you have to explain it, it’s bad.” – Cory House*
+
+---
+
+<!-- AUTO_PROJECTS_START -->
+
+## 🚀 Projects & Technologies
+
+> Automatically generated from my public GitHub repositories. Languages are read from GitHub repository statistics, while frameworks and libraries are detected from project dependencies.
+
+### [restaurant-ordering-app](https://github.com/OmmPrakash-07/restaurant-ordering-app)
+
+**Languages:** `TypeScript` `JavaScript` `CSS`
+**Frontend:** `React` `Next.js` `Tailwind CSS`
+**Database:** `MongoDB`
+**Tools:** `npm`
+
+---
+
+### [DevTeam-AI](https://github.com/OmmPrakash-07/DevTeam-AI)
+
+**Languages:** `Python` `JavaScript` `CSS` `HTML`
+**Frontend:** `React` `Vite` `Tailwind CSS`
+**Backend:** `FastAPI`
+**AI / ML:** `LangChain` `LangGraph` `OpenAI`
+**Tools:** `npm` `Python Package Manager`
+
+---
+
+### [3D-Image-Slider](https://github.com/OmmPrakash-07/3D-Image-Slider)
+
+**Languages:** `CSS` `HTML`
+
+---
+
+### [Netflix-Clone-Using-HTML-CSS-JavaScript](https://github.com/OmmPrakash-07/Netflix-Clone-Using-HTML-CSS-JavaScript)
+🎬 Netflix Clone built using HTML, CSS, and JavaScript. Still in development. Feel free to explore and contribute!
+
+**Languages:** `HTML` `CSS` `JavaScript`
+
+---
+
+### [Happy-Birthday-Shivansh](https://github.com/OmmPrakash-07/Happy-Birthday-Shivansh)
+🎉 A simple and colorful birthday webpage created to celebrate Shivansh's special day with personalized messages and visuals.
+
+**Languages:** `CSS` `HTML`
+
+---
+
+### [Chatting-Application](https://github.com/OmmPrakash-07/Chatting-Application)
+💬 A simple Java Swing-based chatting app using client-server architecture. Built for learning socket programming and GUI design.
+
+**Languages:** `Java`
+
+---
+
+### [E-Commerce-Website-using-Vite-React](https://github.com/OmmPrakash-07/E-Commerce-Website-using-Vite-React)
+
+**Languages:** `JavaScript` `CSS` `HTML`
+**Frontend:** `React` `Vite` `React Router`
+**Tools:** `npm`
+
+---
+
+### [Python-Digital-Clock-with-Glowing-Effect](https://github.com/OmmPrakash-07/Python-Digital-Clock-with-Glowing-Effect)
+🕒 A fullscreen digital clock made with Python Tkinter, featuring a glowing animation and real-time date & time display.
+
+**Languages:** `Python`
+
+---
+
+### [Tic-Tac-Toe](https://github.com/OmmPrakash-07/Tic-Tac-Toe)
+A Python Tkinter-based Tic Tac Toe game with AI, player names, score tracking, and a countdown timer per turn.
+
+**Languages:** `Python`
+
+---
+
+### [MERN-Stack-Internship](https://github.com/OmmPrakash-07/MERN-Stack-Internship)
+
+**Languages:** `HTML` `CSS` `JavaScript`
+
+---
+
+### [Flipkart-Clone](https://github.com/OmmPrakash-07/Flipkart-Clone)
+Flipkart Clone built using HTML, CSS, and JavaScript. Still in development. Feel free to explore and contribute!
+
+**Languages:** `HTML` `CSS`
+
+---
+
+### [Python-Course-by-Shradha-Khapra](https://github.com/OmmPrakash-07/Python-Course-by-Shradha-Khapra)
+
+**Languages:** `Python`
+
+---
+
+### [AI-Based-Plant-Disease-Detection-System](https://github.com/OmmPrakash-07/AI-Based-Plant-Disease-Detection-System)
+
+**Languages:** `Python` `HTML` `CSS`
+**Backend:** `Flask`
+**AI / ML:** `TensorFlow`
+**Libraries / Frameworks:** `NumPy`
+**Tools:** `Python Package Manager`
+
+---
+
+### [Money-Manager](https://github.com/OmmPrakash-07/Money-Manager)
+Expense tracker PWA with offline support, budget management & dark mode. No cloud, no tracking, 100% private.
+
+**Languages:** `CSS` `JavaScript` `HTML`
+**Tools:** `npm`
+
+---
+
+### [distributed-file-storage-system](https://github.com/OmmPrakash-07/distributed-file-storage-system)
+
+**Languages:** `Java` `JavaScript` `CSS` `HTML`
+**Frontend:** `React` `Vite` `React Router`
+**Backend:** `Spring Boot`
+**Libraries / Frameworks:** `Axios`
+**Tools:** `Docker` `Maven` `npm`
+
+---
+
+### [ai-resume-analyzer](https://github.com/OmmPrakash-07/ai-resume-analyzer)
+AI-powered ATS resume analyzer with job matching and Gemini recommendations.
+
+**Languages:** `Python`
+**Tools:** `Python Package Manager`
+
+---
+
+### [Bike-Rental](https://github.com/OmmPrakash-07/Bike-Rental)
+
+**Languages:** `CSS` `JavaScript` `HTML` `Java`
+**Backend:** `Spring Boot`
+**Database:** `MySQL`
+**Tools:** `Maven`
+
+---
+
+### [Near-Connect](https://github.com/OmmPrakash-07/Near-Connect)
+
+**Languages:** `Java` `JavaScript` `CSS` `HTML`
+**Frontend:** `React` `Vite`
+**Backend:** `Spring Boot`
+**Database:** `MySQL`
+**Tools:** `Maven` `npm`
+
+
+<!-- AUTO_PROJECTS_END -->
