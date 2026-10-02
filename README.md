@@ -66,7 +66,7 @@ That’s all about me. Thank you!
 
 ---
 
-## 📂 Languages
+<!-- ## 📂 Languages
 
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=OmmPrakash-07&layout=compact&langs_count=12&theme=radical" />
@@ -77,17 +77,34 @@ That’s all about me. Thank you!
 </p>
 
 ---
+-->
 
 ## 📊 GitHub Analytics
 
-<!-- ![OmmPrakash-07 GitHub Stats](https://github-readme-stats.vercel.app/api?username=OmmPrakash-07&show_icons=true&theme=radical)
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=OmmPrakash-07&layout=compact&theme=radical) -->
 <p align="center">
-  <img src="https://streak-stats.demolab.com?user=OmmPrakash-07&theme=radical" alt="GitHub Streak" />
+  <img 
+    src="https://github-readme-stats.vercel.app/api?username=OmmPrakash-07&show_icons=true&theme=radical&hide_border=true" 
+    alt="OmmPrakash-07 GitHub Stats"
+  />
+  <img 
+    src="https://github-readme-stats.vercel.app/api/top-langs/?username=OmmPrakash-07&layout=compact&theme=radical&hide_border=true" 
+    alt="Top Languages"
+  />
 </p>
 
-![OmmPrakash-07's GitHub Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=OmmPrakash-07&theme=github-compact)
+<p align="center">
+  <img 
+    src="https://streak-stats.demolab.com?user=OmmPrakash-07&theme=radical&hide_border=true" 
+    alt="GitHub Streak"
+  />
+</p>
 
+<!-- <p align="center">
+  <img 
+    src="https://github-readme-activity-graph.vercel.app/graph?username=OmmPrakash-07&theme=github-compact&hide_border=true" 
+    alt="OmmPrakash-07 GitHub Activity Graph"
+  />
+</p> -->
 
 ---
 
